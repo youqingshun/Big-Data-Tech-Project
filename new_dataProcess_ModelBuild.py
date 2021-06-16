@@ -216,5 +216,21 @@ class DataSet:
         res = pd.DataFrame((carsRate, carSituat, bikeRate,  bikeSituat))
         res.columns = rowNames
         res.index = columNames
+
+        ## plot the digrams
+        x = [i+1 for i in range(len(rowNames)) ]
+        yC = carsRate
+        yB = bikeRate
+        plt.xlabel("Date time")
+        plt.ylabel("Car driving or bike riding rate")
+        plt.xticks(x, rowNames)
+        plt.ylim(0,1)
+        plt.plot(x, yC)
+        plt.plot(x, yB)
+        plt.legend( labels = ['Cars', 'Bikes'], loc = "upper right")
+        plt.show()
         return res
-     
+
+
+
+
