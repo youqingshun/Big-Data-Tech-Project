@@ -217,6 +217,8 @@ class DataSet:
         res.columns = rowNames
         res.index = columNames
 
+        
+
         ## plot the digrams
         x = [i+1 for i in range(len(rowNames)) ]
         yC = carsRate
@@ -229,7 +231,30 @@ class DataSet:
         plt.plot(x, yB)
         plt.legend( labels = ['Cars', 'Bikes'], loc = "upper right")
         plt.show()
+        print(res)
         return res
+
+''
+    def plot_output(self, days, trafficDataPath):
+        output = self.output(self, days, trafficDataPath)
+        carsRate = output.iloc[0,:]
+        bikeRate = output.iloc[2,:]
+        rowNames = output.columns
+        x = [i+1 for i in range(len(rowNames)) ]
+        yC = carsRate
+        yB = bikeRate
+        plt.xlabel("Date time")
+        plt.ylabel("Car driving or bike riding rate")
+        plt.xticks(x, rowNames)
+        plt.ylim(0,1)
+        plt.plot(x, yC)
+        plt.plot(x, yB)
+        plt.legend( labels = ['Cars', 'Bikes'], loc = "upper right")
+        plt.show()
+
+
+
+
 
 
 
