@@ -8,8 +8,8 @@ There are three folders (data_preparation, model_fitting, result_display) includ
   - initialData.csv is the data before PCA.
   - trafficData.csv is the data after PCA.
   - weatherData.csv is the data of weather.
-- result_display consists of the codes and other files which need to used in the process.
-  - da folder contains the codes of models' codes, calling code and the other files.
+- result_display consists of web system based on python.
+  - temp folder contains the html.
   - main.py is the LG model code.
   - dataProcess_ModelBuild.py is the packaged data processing and other models code.
   - BDT.jason and weatherandtraffic.ibd are the part of trial data.
